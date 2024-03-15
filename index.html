@@ -20,7 +20,16 @@
         padding: 0;
       }
 
+      /* Estilos gerais */
+
+      body {
+        font-family: "Arial", sans-serif;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+
       main {
+        display: flexbox;
         max-width: 80vw;
         margin: 0 auto;
       }
@@ -29,30 +38,15 @@
         padding: 20px;
       }
 
-      p {
-        margin-bottom: 16px;
-      }
-
-      ul li {
-        margin-left: 20px;
-      }
-
-      body {
-        font-family: "Arial", sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-
-      header {
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
+      main section,
+      main article {
+        display: flexbox;
+        color: black;
+        background-color: #fff;
         padding: 20px;
-      }
-
-      header h1 {
-        font-size: 24px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
       }
 
       section h1,
@@ -67,59 +61,74 @@
         margin-bottom: 10px;
       }
 
+      p {
+        margin-bottom: 16px;
+      }
+
+      ul li {
+        list-style-position: inside;
+      }
+
+      /* Header */
+
+      header {
+        display: flexbox;
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+      }
+
+      header h1 {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      /* Lista de navegação */
+
       nav ul {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
         justify-content: center;
         background-color: #343a40;
         padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       nav a {
         text-decoration: none;
         color: #fff;
         font-weight: bold;
-        &:hover {
-          color: #ffc107;
-        }
       }
 
+      nav a:hover {
+        color: #ffc107;
+      }
+
+      /* Seções */
+
       #curiosidades li::marker {
-        content: "🔎";
+        content: "🔍";
       }
 
       #evolucao ul {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
         list-style: none;
       }
 
-      #evolucao ul li {
-        display: flex;
-        flex-direction: column;
+      #evolucao figcaption {
+        font-weight: 600;
+        font-size: 20px;
         text-align: center;
-        font-weight: bold;
+        margin-top: 16px;
       }
 
-      th {
-        padding: 10px 24px;
-      }
-
-      tr {
-        text-align: center;
-      }
-
-      main section,
-      main article,
-      main table {
-        color: black;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+      #evolucao img {
+        height: 215px;
+        width: 215px;
       }
 
       article {
@@ -127,15 +136,23 @@
         color: #fff;
       }
 
-      #recursos a {
-        &:hover {
-          opacity: 0.8;
-        }
+      #info-squirtle img {
+        height: 96px;
+        width: 96px;
       }
+
+      /* Links */
 
       a[target="_blank"] {
         color: #4592c4;
+        font-weight: bold;
       }
+
+      a[target="_blank"]:hover {
+        opacity: 0.8;
+      }
+
+      /* Footer */
 
       footer {
         background-color: #343a40;
@@ -143,32 +160,32 @@
         padding: 20px;
         text-align: center;
         bottom: 0;
-        width: 100%;
       }
 
       footer a {
-        color: #ffc107;
         text-decoration: none;
-        &:hover {
-          opacity: 0.8;
-        }
+        transition: color 0.3s ease-in-out;
       }
 
-      a[href="#info-squirtle"] {
+      footer a[href*="#"] {
         color: white;
       }
 
-      a[href="mailto:contato@squirtlepage.com"] {
+      footer a[href*="mailto"] {
         color: orangered;
       }
 
-      a[href="tel:+5555555555"] {
+      footer a[href*="tel"] {
         color: limegreen;
+      }
+
+      footer a[href]:hover {
+        opacity: 0.8;
       }
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>Squirtle</h1>
     </header>
 
@@ -265,31 +282,36 @@
       </section>
 
       <section id="evolucao" aria-labelledby="evolucao-label">
-        <h2 id="evolucao-label">Evolução</h2>
+        <h2 id="evolucao-label">Evoluções</h2>
         <ul>
           <li>
-            <a href="https://bulbapedia.bulbagarden.net/wiki/"
-              ><img
+            <figure>
+              <img
                 src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
-                alt="Imagem Squirtle"
-            /></a>
-            1. Squirtle
+                alt="Squirtle"
+              />
+              <figcaption>1. Squirtle</figcaption>
+            </figure>
           </li>
+
           <li>
-            <a href="https://bulbapedia.bulbagarden.net/wiki/"
-              ><img
+            <figure>
+              <img
                 src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
-                alt="Imagem Wartortle"
-            /></a>
-            2. Wartortle
+                alt="Wartortle"
+              />
+              <figcaption>2. Wartortle</figcaption>
+            </figure>
           </li>
+
           <li>
-            <a href="https://bulbapedia.bulbagarden.net/wiki/">
+            <figure>
               <img
                 src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
-                alt="Imagem Blastoise"
-            /></a>
-            3. Blastoise
+                alt="Blastoise"
+              />
+              <figcaption>3. Blastoise</figcaption>
+            </figure>
           </li>
         </ul>
       </section>
@@ -299,7 +321,7 @@
       <p aria-label="Copyright">
         &copy; 2024 Página do Pokémon Squirtle. Todos os direitos reservados.
       </p>
-      <p><a href="#info-squirtle">Voltar para o topo</a></p>
+      <p><a href="#header">Voltar para o topo</a></p>
       <p><a href="mailto:contato@squirtlepage.com">Contato via e-mail</a></p>
       <p><a href="tel:+5555555555">Telefone: (55) 5555-5555</a></p>
     </footer>
