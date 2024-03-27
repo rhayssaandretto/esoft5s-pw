@@ -116,12 +116,12 @@
 
    .container-info {
        display: flex;
-       justify-content: space-around;
-       flex-wrap: wrap;
+       justify-content: space-evenly;
    }
 
    .container-info img:nth-child(2) {
-       padding: 30px;
+       padding: 35px;
+       margin: 12px;
    }
 
    #curiosidades li::marker {
@@ -179,12 +179,16 @@
        background-color: #343a40;
        color: #fff;
        padding: 20px;
-       gap: 12px;
+       gap: 16px;
    }
 
    footer a {
        text-decoration: none;
        transition: color 0.3s ease-in-out;
+   }
+
+   footer p {
+       margin-bottom: 0px;
    }
 
    footer a[href*='#'] {
