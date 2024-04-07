@@ -39,7 +39,6 @@ async function loadImage(data) {
 async function useImage(data) {
   try {
     const image = await loadImage(data);
-    document.body.appendChild(image);
     document.querySelector("section").appendChild(image);
   } catch (error) {
     console.error(error.message);
